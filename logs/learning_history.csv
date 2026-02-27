@@ -1,0 +1,13 @@
+timestamp,user_id,question_id,difficulty,correct,concept,estimated_ability,eig_value,learning_mode,hint_used,hint_cost,entropy_at_hint
+2025-12-09 16:09:57,Admin,10,0.5,0,Overfitting,0.3012,0.1744,Adaptive (AI),No,0.00,N/A
+2025-12-09 16:11:51,Admin,10,0.5,0,Overfitting,0.3012,0.1744,Adaptive (AI),No,0.00,N/A
+2025-12-09 16:11:57,Admin,4,0.3,1,Optimization,0.3858,0.1216,Adaptive (AI),No,0.00,N/A
+2025-12-09 16:27:00,Admin,10,0.5,0,Overfitting,0.3012,0.1744,Adaptive (AI),No,0.00,N/A
+2025-12-09 16:27:05,Admin,4,0.3,1,Optimization,0.3858,0.1216,Adaptive (AI),No,0.00,N/A
+2025-12-09 16:27:12,Admin,2,0.4,1,Metrics,0.4740,0.1216,Adaptive (AI),No,0.00,N/A
+2025-12-09 16:27:17,Admin,20,0.4,0,Methodology,0.3324,0.1180,Adaptive (AI),No,0.00,N/A
+2025-12-09 17:59:47,Admin,10,0.5,0,Overfitting,0.3012,0.1744,Adaptive (AI),No,0.00,N/A
+2025-12-09 19:06:15,Admin,10,0.5,1,Overfitting,0.6325,0.1744,Adaptive (AI),No,0.00,N/A
+2025-12-09 19:16:49,Admin,10,0.5,0,Overfitting,0.3012,0.1744,Adaptive (AI),No,0.00,N/A
+2025-12-09 19:18:18,Admin,1,0.2,0,Overfitting,0.2164,0.0668,Adaptive (AI),No,0.00,N/A
+2025-12-09 19:57:01,Admin,5,0.2,1,Unsupervised,0.2516,0.0690,Adaptive (AI),No,0.00,N/A

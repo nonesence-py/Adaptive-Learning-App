@@ -1,0 +1,227 @@
+{
+  "username": "Admin",
+  "learning_stats": {
+    "total_questions": 19,
+    "correct_answers": 7,
+    "wrong_answers": 12,
+    "current_streak": 1,
+    "best_streak": 2,
+    "total_study_time": 0,
+    "last_study_date": "2025-12-09 19:57:01"
+  },
+  "learning_history": [
+    {
+      "question_id": 10,
+      "is_correct": false,
+      "timestamp": "2025-12-09 14:52:28",
+      "study_time_minutes": 0
+    },
+    {
+      "question_id": 4,
+      "is_correct": true,
+      "timestamp": "2025-12-09 14:52:37",
+      "study_time_minutes": 0
+    },
+    {
+      "question_id": 2,
+      "is_correct": false,
+      "timestamp": "2025-12-09 14:52:42",
+      "study_time_minutes": 0
+    },
+    {
+      "question_id": 1,
+      "is_correct": true,
+      "timestamp": "2025-12-09 14:52:47",
+      "study_time_minutes": 0
+    },
+    {
+      "question_id": 10,
+      "is_correct": false,
+      "timestamp": "2025-12-09 16:07:13",
+      "study_time_minutes": 0
+    },
+    {
+      "question_id": 4,
+      "is_correct": false,
+      "timestamp": "2025-12-09 16:07:19",
+      "study_time_minutes": 0
+    },
+    {
+      "question_id": 1,
+      "is_correct": false,
+      "timestamp": "2025-12-09 16:07:23",
+      "study_time_minutes": 0
+    },
+    {
+      "question_id": 10,
+      "is_correct": false,
+      "timestamp": "2025-12-09 16:09:57",
+      "study_time_minutes": 0
+    },
+    {
+      "question_id": 10,
+      "is_correct": false,
+      "timestamp": "2025-12-09 16:11:51",
+      "study_time_minutes": 0
+    },
+    {
+      "question_id": 4,
+      "is_correct": true,
+      "timestamp": "2025-12-09 16:11:57",
+      "study_time_minutes": 0
+    },
+    {
+      "question_id": 10,
+      "is_correct": false,
+      "timestamp": "2025-12-09 16:27:00",
+      "study_time_minutes": 0
+    },
+    {
+      "question_id": 4,
+      "is_correct": true,
+      "timestamp": "2025-12-09 16:27:05",
+      "study_time_minutes": 0
+    },
+    {
+      "question_id": 2,
+      "is_correct": true,
+      "timestamp": "2025-12-09 16:27:12",
+      "study_time_minutes": 0
+    },
+    {
+      "question_id": 20,
+      "is_correct": false,
+      "timestamp": "2025-12-09 16:27:17",
+      "study_time_minutes": 0
+    },
+    {
+      "question_id": 10,
+      "is_correct": false,
+      "timestamp": "2025-12-09 17:59:47",
+      "study_time_minutes": 0
+    },
+    {
+      "question_id": 10,
+      "is_correct": true,
+      "timestamp": "2025-12-09 19:06:15",
+      "study_time_minutes": 0
+    },
+    {
+      "question_id": 10,
+      "is_correct": false,
+      "timestamp": "2025-12-09 19:16:49",
+      "study_time_minutes": 0
+    },
+    {
+      "question_id": 1,
+      "is_correct": false,
+      "timestamp": "2025-12-09 19:18:18",
+      "study_time_minutes": 0
+    },
+    {
+      "question_id": 5,
+      "is_correct": true,
+      "timestamp": "2025-12-09 19:57:01",
+      "study_time_minutes": 0
+    }
+  ],
+  "wrong_questions": [
+    10,
+    2,
+    4,
+    1,
+    20
+  ],
+  "wrong_questions_detail": [
+    {
+      "question_id": 10,
+      "question": "L1 Regularization is also known as?",
+      "concept": "Overfitting",
+      "difficulty": 0.5,
+      "user_answer": "C",
+      "correct_answer": "B",
+      "explanation": "Lasso (L1) adds the absolute value of magnitude of coefficient as penalty term to the loss function.",
+      "hint": "Think about the difference between how a model performs on data it has seen (training) versus new data (testing).",
+      "first_wrong_time": "2025-12-09 14:52:28",
+      "last_wrong_time": "2025-12-09 19:16:49",
+      "wrong_count": 7,
+      "mastered": false,
+      "mastered_time": null,
+      "review_count": 4
+    },
+    {
+      "question_id": 2,
+      "question": "Which metric is most appropriate for a binary classification problem with imbalanced classes?",
+      "concept": "Metrics",
+      "difficulty": 0.4,
+      "user_answer": "C",
+      "correct_answer": "B",
+      "explanation": "Accuracy can be misleading in imbalanced datasets; F1-Score balances Precision and Recall.",
+      "hint": "When classes are imbalanced, accuracy can be misleading. Consider metrics that account for both precision and recall.",
+      "first_wrong_time": "2025-12-09 14:52:42",
+      "last_wrong_time": "2025-12-09 14:52:42",
+      "wrong_count": 1,
+      "mastered": false,
+      "mastered_time": null,
+      "review_count": 1
+    },
+    {
+      "question_id": 4,
+      "question": "What does a high learning rate often lead to?",
+      "concept": "Optimization",
+      "difficulty": 0.3,
+      "user_answer": "D",
+      "correct_answer": "C",
+      "explanation": "A learning rate that is too high can cause the optimizer to overshoot the global minimum and fail to converge.",
+      "hint": "Learning rate controls step size. Too high means overshooting; too low means slow convergence.",
+      "first_wrong_time": "2025-12-09 16:07:19",
+      "last_wrong_time": "2025-12-09 16:07:19",
+      "wrong_count": 1,
+      "mastered": false,
+      "mastered_time": null,
+      "review_count": 0
+    },
+    {
+      "question_id": 1,
+      "question": "What is the main risk of a model that performs well on training data but poorly on test data?",
+      "concept": "Overfitting",
+      "difficulty": 0.2,
+      "user_answer": "C",
+      "correct_answer": "B",
+      "explanation": "Overfitting happens when a model learns the noise in the training data rather than the actual pattern.",
+      "hint": "Think about the difference between how a model performs on data it has seen (training) versus new data (testing).",
+      "first_wrong_time": "2025-12-09 16:07:23",
+      "last_wrong_time": "2025-12-09 19:18:18",
+      "wrong_count": 2,
+      "mastered": true,
+      "mastered_time": "2025-12-09 16:08:19",
+      "review_count": 0
+    },
+    {
+      "question_id": 20,
+      "question": "K-Fold Cross-Validation is used to?",
+      "concept": "Methodology",
+      "difficulty": 0.4,
+      "user_answer": "D",
+      "correct_answer": "B",
+      "explanation": "K-Fold provides a more robust estimate of model performance by averaging results over K subsets.",
+      "hint": "Cross-validation splits data into K folds to get a more reliable performance estimate by averaging results.",
+      "first_wrong_time": "2025-12-09 16:27:17",
+      "last_wrong_time": "2025-12-09 16:27:17",
+      "wrong_count": 1,
+      "mastered": false,
+      "mastered_time": null,
+      "review_count": 0
+    }
+  ],
+  "favorite_questions": [],
+  "learning_goals": {
+    "target_ability": 0.8,
+    "target_questions_per_day": 10,
+    "target_concepts": []
+  },
+  "preferences": {
+    "theme": "light",
+    "notifications": true
+  }
+}

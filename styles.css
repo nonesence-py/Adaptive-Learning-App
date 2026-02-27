@@ -1,0 +1,648 @@
+/* ============================================
+   Adaptive STEM Learning App - Custom Styles
+   ============================================ */
+
+/* --- 全局样式 --- */
+.main {
+    padding-top: 2rem;
+}
+
+/* --- 隐藏默认的Streamlit元素 --- */
+#MainMenu {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
+
+/* 不隐藏header，确保侧边栏切换按钮可见 */
+/* header {
+    visibility: hidden;  // 注释掉，让侧边栏按钮可见
+} */
+
+/* --- 侧边栏样式修复 - 增强版 --- */
+/* 侧边栏背景 */
+section[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #f7fafc 0%, #edf2f7 100%);
+    box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+}
+
+section[data-testid="stSidebar"] > div {
+    background: transparent;
+}
+
+/* 侧边栏内容区域 */
+section[data-testid="stSidebar"] .element-container {
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* 确保侧边栏切换按钮始终可见 */
+/* Streamlit的侧边栏按钮在header中，不要隐藏它 */
+[data-testid="stHeader"] {
+    visibility: visible !important;
+}
+
+header {
+    visibility: visible !important;
+}
+
+/* 确保侧边栏切换按钮可见且可点击 */
+/* 只针对侧边栏切换按钮，不影响Deploy等其他按钮 */
+button[data-testid="baseButton-header"][aria-label*="sidebar"],
+button[data-testid="baseButton-header"][aria-label*="menu"],
+[data-testid="stHeader"] button[data-testid="baseButton-header"]:first-child {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: flex !important;
+    cursor: pointer !important;
+    z-index: 999 !important;
+}
+
+/* 确保侧边栏收起时按钮仍然可见 */
+section[data-testid="stSidebar"][aria-expanded="false"] ~ * button[data-testid="baseButton-header"],
+.stApp[data-sidebar-state="collapsed"] button[data-testid="baseButton-header"] {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: flex !important;
+}
+
+/* 确保其他按钮不受影响 - 重置所有非侧边栏按钮的位置 */
+button:not([kind="header"]):not([data-testid="baseButton-header"]) {
+    position: static !important;
+}
+
+/* 确保表单按钮在正确位置 */
+button[type="submit"],
+.stFormSubmitButton > button,
+form button {
+    position: static !important;
+    position: relative !important;
+}
+
+/* --- 卡片样式 - 增强版 --- */
+.metric-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin: 0.5rem 0;
+    border-left: 4px solid #667eea;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.metric-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.15);
+}
+
+.question-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    margin: 1rem 0;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.question-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+}
+
+.question-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* --- 标题样式（避免使用background-clip） - 增强版 --- */
+h1 {
+    color: #667eea;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    animation: fadeInDown 0.6s ease-out;
+    text-shadow: 0 2px 10px rgba(102, 126, 234, 0.2);
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    color: #4a5568;
+    font-weight: 600;
+}
+
+h3 {
+    color: #718096;
+    font-weight: 600;
+}
+
+/* --- 按钮样式 --- */
+.stButton > button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+}
+
+/* --- 侧边栏按钮样式（覆盖全局按钮，仅侧边栏） --- */
+section[data-testid="stSidebar"] .stButton > button {
+    background: #f8fafc;
+    color: #2d3748;
+    border-radius: 999px;
+    border: 1px solid #e2e8f0;
+    padding: 0.55rem 0.9rem;
+    font-weight: 500;
+    box-shadow: none;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
+}
+
+/* 确保所有非侧边栏按钮都在正常位置 */
+button:not([kind="header"]):not(header button) {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+}
+
+/* --- 表单提交按钮样式（确保可见且位置正确） --- */
+button[type="submit"],
+.stFormSubmitButton > button,
+div[data-testid="stForm"] button[type="submit"],
+form button[type="submit"] {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 0.75rem 2rem !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    transition: all 0.3s ease !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
+    width: 100% !important;
+    cursor: pointer !important;
+    margin-top: 0.5rem !important;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+}
+
+button[type="submit"]:hover,
+.stFormSubmitButton > button:hover,
+div[data-testid="stForm"] button[type="submit"]:hover,
+form button[type="submit"]:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4) !important;
+}
+
+/* --- 表单样式 - 增强交互效果 --- */
+.stTextInput > div > div > input {
+    border-radius: 10px;
+    border: 2px solid #e2e8f0;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    background: white;
+}
+
+.stTextInput > div > div > input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+    outline: none;
+    transform: translateY(-1px);
+}
+
+.stTextInput > div > div > input:hover {
+    border-color: #cbd5e0;
+}
+
+/* --- 单选按钮样式 - 增强版 --- */
+.stRadio > div {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.stRadio > div:hover {
+    border-color: #cbd5e0;
+    background: #f7fafc;
+}
+
+.stRadio > div > label {
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.stRadio > div[data-baseweb="radio"]:has(input:checked) {
+    border-color: #667eea;
+    background: rgba(102, 126, 234, 0.05);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* --- 标签页样式 - 增强版 --- */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 8px;
+    background: transparent;
+}
+
+.stTabs [data-baseweb="tab"] {
+    border-radius: 8px 8px 0 0;
+    padding: 0.5rem 1.5rem;
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+    background: #edf2f7;
+    transform: translateY(-1px);
+}
+
+.stTabs [data-baseweb="tab"][aria-selected="true"] {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: #667eea;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+    transform: translateY(-2px);
+}
+
+/* --- 消息样式（使用Streamlit原生类） --- */
+/* 确保消息框样式正确 */
+div[data-baseweb="notification"],
+div[data-baseweb="toast"] {
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+/* 确保空div不会显示（但排除Streamlit内部使用的空div） */
+div:empty:not([data-baseweb]):not([class*="st"]):not([id*="st"]) {
+    display: none;
+}
+
+/* 确保只有有内容的div才显示样式 */
+.metric-card:empty,
+.question-card:empty {
+    display: none;
+}
+
+/* 隐藏可能出现的无内容容器 */
+div[style*="background"]:empty,
+div[style*="gradient"]:empty {
+    display: none;
+}
+
+/* --- 指标卡片样式 --- */
+[data-testid="stMetricValue"] {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2d3748;
+}
+
+[data-testid="stMetricDelta"] {
+    font-size: 1rem;
+}
+
+[data-testid="stMetricLabel"] {
+    font-size: 0.9rem;
+    color: #718096;
+    font-weight: 600;
+}
+
+/* --- 分隔线 --- */
+hr {
+    margin: 2rem 0;
+    border: none;
+    border-top: 2px solid #e2e8f0;
+}
+
+/* --- 图表容器 - 美化 --- */
+.js-plotly-plot {
+    border-radius: 12px;
+    background: white;
+    padding: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.js-plotly-plot:hover {
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+}
+
+/* Plotly图表容器优化 */
+.plotly {
+    border-radius: 12px;
+}
+
+/* 图表标题样式 */
+.plotly .gtitle {
+    font-weight: 600 !important;
+    color: #2d3748 !important;
+}
+
+/* --- 选择框样式 - 增强版 --- */
+.stSelectbox > div > div {
+    border-radius: 10px;
+}
+
+.stSelectbox > div > div > div {
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.stSelectbox > div > div > div:focus-within {
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+    transform: translateY(-1px);
+}
+
+.stSelectbox > div > div > div:hover {
+    border-color: #cbd5e0;
+}
+
+/* --- 展开器样式 - 增强版 --- */
+.streamlit-expanderHeader {
+    background: #f7fafc;
+    border-radius: 10px;
+    padding: 0.75rem;
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.streamlit-expanderHeader:hover {
+    background: #edf2f7;
+    border-color: #cbd5e0;
+}
+
+.streamlit-expanderContent {
+    padding: 1rem;
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* --- 整体背景 --- */
+.stApp {
+    background: linear-gradient(180deg, #f7fafc 0%, #edf2f7 100%);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* 背景装饰元素 */
+.stApp::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+    animation: float 20s ease-in-out infinite;
+}
+
+.stApp::after {
+    content: '';
+    position: fixed;
+    bottom: -30%;
+    left: -5%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(118, 75, 162, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+    animation: float 25s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+}
+
+/* --- 容器间距优化 --- */
+.block-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    max-width: 1400px;
+}
+
+/* 登录页面使用更宽的容器 */
+.login-page-container {
+    max-width: 100%;
+    padding: 2rem 3rem;
+}
+
+/* --- 登录页面专用样式 --- */
+.login-container {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    margin: 2rem 0;
+}
+
+/* 登录表单卡片样式 - 增强版 */
+.login-form-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(102, 126, 234, 0.15), 
+                0 0 0 1px rgba(102, 126, 234, 0.05);
+    margin: 0 auto;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.6s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-form-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
+}
+
+.login-form-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 48px rgba(102, 126, 234, 0.2), 
+                0 0 0 1px rgba(102, 126, 234, 0.1);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* 登录页面布局优化 */
+.login-page-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* 确保登录表单中的按钮可见且位置正确 - 增强版 */
+.login-form-card button[type="submit"],
+.login-form-card .stFormSubmitButton > button,
+.login-form-card form button[type="submit"] {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 1rem 2rem !important;
+    font-weight: 600 !important;
+    font-size: 1.05rem !important;
+    transition: all 0.3s ease !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
+    width: 100% !important;
+    cursor: pointer !important;
+    margin-top: 0.5rem !important;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3) !important;
+    letter-spacing: 0.5px !important;
+}
+
+.login-form-card button[type="submit"]:hover,
+.login-form-card .stFormSubmitButton > button:hover,
+.login-form-card form button[type="submit"]:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.5) !important;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
+}
+
+.login-form-card button[type="submit"]:active,
+.login-form-card .stFormSubmitButton > button:active,
+.login-form-card form button[type="submit"]:active {
+    transform: translateY(-1px) !important;
+}
+
+/* --- 消息样式增强 --- */
+div[data-baseweb="notification"].stSuccess {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(72, 187, 120, 0.3);
+    animation: slideInRight 0.4s ease-out;
+}
+
+div[data-baseweb="notification"].stError {
+    background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(245, 101, 101, 0.3);
+    animation: slideInRight 0.4s ease-out;
+}
+
+div[data-baseweb="notification"].stInfo {
+    background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
+    animation: slideInRight 0.4s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* --- 响应式设计 --- */
+@media (max-width: 768px) {
+    .block-container {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .question-card {
+        padding: 1rem;
+    }
+    
+    .login-form-card {
+        padding: 1.5rem;
+    }
+    
+    .stApp::before,
+    .stApp::after {
+        display: none;
+    }
+}
+

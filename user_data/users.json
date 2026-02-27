@@ -1,0 +1,22 @@
+{
+  "Admin": {
+    "username": "Admin",
+    "password_hash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+    "email": "Liwenxin20040505@bupt.edu.cn",
+    "nickname": "Wenxin",
+    "role": "Student",
+    "created_at": "2025-12-09 14:00:23",
+    "last_login": "2025-12-09 20:03:11",
+    "login_count": 61
+  },
+  "Wenxin": {
+    "username": "Wenxin",
+    "password_hash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+    "email": "",
+    "nickname": "Wenxin",
+    "role": "Student",
+    "created_at": "2025-12-09 14:47:17",
+    "last_login": "2025-12-09 14:47:27",
+    "login_count": 1
+  }
+}
